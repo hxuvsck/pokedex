@@ -3,6 +3,8 @@ import { Text, View } from "react-native";
 
 export default function Index() {
 
+  const [pokemons, setPokemons] = useState([]);
+
   useEffect(() => {
     // fetch pokemons
     fetchPokemons();
@@ -13,12 +15,11 @@ export default function Index() {
       const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=20");
       const data = await response.json();
 
-      console.log(data);
+      setPokemons(data);
     } catch (e) {
       console.log(e);
     }
   }
-  useState
 
   return (
     <View
