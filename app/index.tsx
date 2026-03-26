@@ -58,6 +58,7 @@ export default async function Index() {
       {pokemons.map((pokemon) => (
         <View key={pokemon.name}>
           <Text>{pokemon.name}</Text>
+          <Text>{pokemon.types[0].type.name}</Text>
           <View style={{
             flexDirection: "row",
           }}>
