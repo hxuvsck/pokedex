@@ -10,15 +10,17 @@ interface Pokemon {
 
 interface PokemonType {
   type: {
-    name: string,
-    url: string,
-  }
+    name: string;
+    url: string;
+  };
 }
 
 export default async function Index() {
 
   // pokemons var will list the data of API fetch that is from setPokemons
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+
+  console.log(JSON.stringify(pokemons[0], null, 2));
 
   useEffect(() => {
     // fetch pokemons
@@ -40,7 +42,7 @@ export default async function Index() {
             name: pokemon.name,
             image: details.sprites.front_default, //main sprite 
             imageBack: details.sprites.back_default,
-            types: details.types
+            types: details.types,
           };
         })
       );
