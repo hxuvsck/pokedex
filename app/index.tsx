@@ -5,6 +5,14 @@ interface Pokemon {
   name: string;
   image: string;
   imageBack: string;
+  types: PokemonType[];
+}
+
+interface PokemonType {
+  type: {
+    name: string,
+    url: string,
+  }
 }
 
 export default async function Index() {
@@ -32,6 +40,7 @@ export default async function Index() {
             name: pokemon.name,
             image: details.sprites.front_default, //main sprite 
             imageBack: details.sprites.back_default,
+            types: details.types
           };
         })
       );
