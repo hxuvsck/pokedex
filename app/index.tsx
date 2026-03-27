@@ -58,7 +58,7 @@ export default async function Index() {
       {pokemons.map((pokemon) => (
         <View key={pokemon.name}>
           <Text style={styles.name}>{pokemon.name}</Text>
-          <Text>{pokemon.types[0].type.name}</Text>
+          <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
           <View style={{
             flexDirection: "row",
           }}>
@@ -79,7 +79,12 @@ export default async function Index() {
 
 const styles = StyleSheet.create({
   name: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  type: {
     fontSize: 20,
     fontWeight: 'bold',
-  }
-})
+    color: 'gray',
+  },
+});
