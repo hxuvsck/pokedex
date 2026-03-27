@@ -21,8 +21,8 @@ interface PokemonType {
 const colorsByType = {
   grass: "green",
   fire: "orange",
-  water: "blue",
-  bug: "cyan",
+  water: "aqua",
+  bug: "yellow",
 } //object
 
 
@@ -65,9 +65,16 @@ export default async function Index() {
   }
 
   return (
-    <ScrollView>
+    <ScrollView
+      contentContainerStyle={{
+        gap: 16,
+        padding: 16,
+      }}
+    >
       {pokemons.map((pokemon) => (
-        <View key={pokemon.name}>
+        <View key={pokemon.name} style={{/*inline style implementation*/
+          backgroundColor: colorsByType[pokemon.types[0].type.name],
+        }}>
           <Text style={styles.name}>{pokemon.name}</Text>
           <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
           <View style={{
