@@ -15,6 +15,17 @@ interface PokemonType {
   };
 }
 
+// define some colors that we want to use based on the pokemon type,
+// so creating a map
+
+const colorsByType = {
+  grass: "green",
+  fire: "orange",
+  water: "blue",
+  bug: "cyan",
+} //object
+
+
 export default async function Index() {
 
   // pokemons var will list the data of API fetch that is from setPokemons
