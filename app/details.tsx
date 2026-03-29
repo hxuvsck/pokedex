@@ -2,7 +2,7 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { ScrollView, StyleSheet, Text } from "react-native";
 
-export default async function Details() {
+export default function Details() {
     const params = useLocalSearchParams()
 
     // console.log(params.name); -- Check if clicked pokemon params is routed

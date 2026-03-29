@@ -41,12 +41,12 @@ const colorsByType = {
 } //object
 
 
-export default async function Index() {
+export default function Index() {
 
   // pokemons var will list the data of API fetch that is from setPokemons
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
-  console.log(JSON.stringify(pokemons[0], null, 2));
+  // console.log(JSON.stringify(pokemons[0], null, 2));
 
   useEffect(() => {
     // fetch pokemons
