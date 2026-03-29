@@ -88,7 +88,7 @@ export default async function Index() {
     >
       {pokemons.map((pokemon) => (
         <Link key={pokemon.name} /*key value switched to here*/
-          href={"/details"}
+          href={{ pathname: "/details", params: { name: pokemon.name } }}
           style={{// @ts-ignore
             backgroundColor: colorsByType[pokemon.types[0].type.name] + 71, //added 71% opacity
             padding: 20,
