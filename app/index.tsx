@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 24,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   type: {
     fontSize: 20,
