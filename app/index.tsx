@@ -89,6 +89,7 @@ export default async function Index() {
         <View key={pokemon.name} style={{/*inline style implementation*/
           // @ts-ignore
           backgroundColor: colorsByType[pokemon.types[0].type.name] + 71, //added 71% opacity
+          padding: 20,
         }}>
           <Text style={styles.name}>{pokemon.name}</Text>
           <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
