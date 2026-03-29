@@ -88,12 +88,13 @@ export default async function Index() {
     >
       {pokemons.map((pokemon) => (
         <Link key={pokemon.name} /*key value switched to here*/
-          href={"/details"}>
-          <View style={{/*inline style implementation*/
-            // @ts-ignore
+          href={"/details"}
+          style={{// @ts-ignore
             backgroundColor: colorsByType[pokemon.types[0].type.name] + 71, //added 71% opacity
             padding: 20,
             borderRadius: 20,
+          }}>
+          <View style={{/*inline style implementation*/
           }}>
             <Text style={styles.name}>{pokemon.name}</Text>
             <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
