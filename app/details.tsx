@@ -1,18 +1,30 @@
-import { useLocalSearchParams } from "expo-router";
-import { ScrollView, StyleSheet } from "react-native";
+import { Stack, useLocalSearchParams } from "expo-router";
+import { useEffect } from "react";
+import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default async function Details() {
     const params = useLocalSearchParams()
 
-    console.log(params);
+    // console.log(params.name); -- Check if clicked pokemon params is routed
+
+    useEffect(() => { }, [])
+
+    // async function fetchPokemonByName(name: string) {
+    //     try { } catch ()
+    // }
 
     return (
-        <ScrollView
-            contentContainerStyle={{
-                gap: 16,
-                padding: 16,
-            }}>
-        </ScrollView>
+        <>
+            <Stack.Screen options={{ title: params.name as string }} />
+            <ScrollView
+                contentContainerStyle={{
+                    gap: 16,
+                    padding: 16,
+                    backgroundColor: 'yellow',
+                }}>
+                <Text>{params.name}</Text>
+            </ScrollView>
+        </>
     );
 }
 
