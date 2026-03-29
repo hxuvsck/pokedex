@@ -56,7 +56,7 @@ export default async function Index() {
     try {
       const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=10");
       const data = await response.json();
-      console.log(response);
+      // console.log(response);
 
       // Fetch detailed info for each Pokemon in parallel
       const detailedPokemons = await Promise.all(
@@ -90,6 +90,7 @@ export default async function Index() {
           // @ts-ignore
           backgroundColor: colorsByType[pokemon.types[0].type.name] + 71, //added 71% opacity
           padding: 20,
+          borderRadius: 20,
         }}>
           <Text style={styles.name}>{pokemon.name}</Text>
           <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
