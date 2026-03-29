@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 interface Pokemon {
   name: string;
@@ -86,27 +86,29 @@ export default async function Index() {
       }}
     >
       {pokemons.map((pokemon) => (
-        <View key={pokemon.name} style={{/*inline style implementation*/
-          // @ts-ignore
-          backgroundColor: colorsByType[pokemon.types[0].type.name] + 71, //added 71% opacity
-          padding: 20,
-          borderRadius: 20,
-        }}>
-          <Text style={styles.name}>{pokemon.name}</Text>
-          <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
-          <View style={{
-            flexDirection: "row",
+        <Pressable key={pokemon.name}>
+          <View style={{/*inline style implementation*/
+            // @ts-ignore
+            backgroundColor: colorsByType[pokemon.types[0].type.name] + 71, //added 71% opacity
+            padding: 20,
+            borderRadius: 20,
           }}>
-            <Image
-              source={{ uri: pokemon.image }}
-              style={{ width: 150, height: 150 }}
-            />
-            <Image
-              source={{ uri: pokemon.imageBack }}
-              style={{ width: 150, height: 150 }}
-            />
+            <Text style={styles.name}>{pokemon.name}</Text>
+            <Text style={styles.type}>{pokemon.types[0].type.name}</Text>
+            <View style={{
+              flexDirection: "row",
+            }}>
+              <Image
+                source={{ uri: pokemon.image }}
+                style={{ width: 150, height: 150 }}
+              />
+              <Image
+                source={{ uri: pokemon.imageBack }}
+                style={{ width: 150, height: 150 }}
+              />
+            </View>
           </View>
-        </View>
+        </Pressable>
       ))}
     </ScrollView>
   );
